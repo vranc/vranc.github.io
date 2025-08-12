@@ -1,0 +1,56 @@
+body{
+    background-image: url('res/Atlas_bg.png');
+      min-height: 100vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: inherit;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+}
+
+.translucent-window {
+    background: rgba(36, 36, 36, 0.6);
+    box-shadow: 0 4px 24px rgba(0,0,0,0.15);
+    padding: 10px;
+    max-width: 200px;
+    color: #222;
+    font-size: 1.2em;
+    backdrop-filter: blur(8px);
+}
+
+.selector-button {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background-color: rgb(49, 49, 49);
+    border: none;
+    color: white;
+    padding: 10px 10px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 20px;
+    width: 200px;
+    margin-top: 1px;
+}
+
+.selector-button img {
+    display: block;
+    height: 40px;
+    width: 40px;
+}
+.selector-button:active::after {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0,0,0,0.2); /* 20% black overlay */
+    border-radius: inherit;
+    pointer-events: none;
+}
+
+.selector-button:hover {
+  background-color: #05588f; /* Change to your desired hover color */
+  color: #fff;
+  transition: background 0.2s, color 0.2s;
+}
