@@ -9,13 +9,24 @@ body{ /* The main page background and base styles */
     padding: 20px; /* Adds padding around the content */
 }
 
+.invisible-container {
+    display: flex; /* Hides the container */
+    gap: 20px; /* Space between windows */
+    /*position: absolute; /* Positions it absolutely within its parent */
+    /*top: 0; /* Aligns to the top */
+    /*left: 0; /* Aligns to the left */
+    /*width: 100%; /* Full width of the parent */
+    /*height: 100%; /* Full height of the parent */
+    /*background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
+}
+
 .translucent-window {
     display: block; /* Container for translucent window effect */
     position: static; /* Keeps the window in a fixed position */
     background: rgba(36, 36, 36, 0.6); /* Semi-transparent dark background */
     box-shadow: 0 4px 24px rgba(0,0,0,0.15); /* Adds a soft shadow */
     padding: 10px; /* Inner spacing */
-    max-width: 200px; /* Maximum width of the window */
+    width: 25vw; /* Stretches to 25% of the viewport width */
     /*max-height: 400px; /* Maximum height before scrolling */
     /*overflow: auto; /* Enables scrollbar if content overflows */
     scrollbar-width: thin; /* Firefox: makes scrollbar thinner */
@@ -35,7 +46,8 @@ body{ /* The main page background and base styles */
 a{
     text-decoration: none;  
     color: inherit; /* Inherits color from parent */
-    outline: none; /* Removes focus outline */ ;
+    outline: none; /* Removes focus outline */
+    font-size: inherit;
 }
 
 a:visited{
@@ -44,7 +56,7 @@ a:visited{
     outline: none; /* Removes focus outline */
 }
 
-.chooser-button {
+a.chooser-button {
     display: flex; /* Flexbox for layout */
     align-items: center; /* Centers items vertically */
     justify-content: left; /* Centers items horizontally */
@@ -59,6 +71,6 @@ a:visited{
     gap: 10px; /* Space between image and text */
 }
 
-.chooser-button:hover {
+a.chooser-button:hover {
     background-color: rgba(0, 74, 122, 1); /* Darker blue on hover */
 }
