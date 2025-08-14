@@ -1,56 +1,64 @@
-body{
-    background-image: url('res/Atlas_bg.png');
-      min-height: 100vh;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: inherit;
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 20px;
+body{ /* The main page background and base styles */
+    background-image: url('res/Atlas_bg.png'); /* Sets the background image */
+    /*min-height: 100vh; /* Ensures the body covers the full viewport height */
+    background-size: cover; /* Scales background to cover the entire area */
+    background-repeat: no-repeat; /* Prevents background from repeating */
+    background-position: inherit; /* Inherits position from parent (usually center is better) */
+    font-family: Arial, sans-serif; /* Sets the default font */
+    margin: 0; /* Removes default margin */
+    padding: 20px; /* Adds padding around the content */
 }
 
 .translucent-window {
-    background: rgba(36, 36, 36, 0.6);
-    box-shadow: 0 4px 24px rgba(0,0,0,0.15);
-    padding: 10px;
-    max-width: 200px;
-    color: #222;
-    font-size: 1.2em;
-    backdrop-filter: blur(8px);
+    display: block; /* Container for translucent window effect */
+    position: static; /* Keeps the window in a fixed position */
+    background: rgba(36, 36, 36, 0.6); /* Semi-transparent dark background */
+    box-shadow: 0 4px 24px rgba(0,0,0,0.15); /* Adds a soft shadow */
+    padding: 10px; /* Inner spacing */
+    max-width: 200px; /* Maximum width of the window */
+    /*max-height: 400px; /* Maximum height before scrolling */
+    /*overflow: auto; /* Enables scrollbar if content overflows */
+    scrollbar-width: thin; /* Firefox: makes scrollbar thinner */
+    scrollbar-color: #3498db rgba(255,255,255,0.2); /* Firefox: thumb and track colors */
+    color: #222; /* Text color */
+    font-size: 1.2em; /* Slightly larger text */
+    backdrop-filter: blur(4px); /* Blurs background behind window */
 }
 
-.selector-button {
-    position: relative;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    background-color: rgb(49, 49, 49);
-    border: none;
-    color: white;
-    padding: 10px 10px;
-    text-align: center;
-    text-decoration: none;
-    font-size: 20px;
-    width: 200px;
-    margin-top: 1px;
+.translucent-window h3 {
+    color: white; /* Heading color */
+    text-align: center; /* Centers the heading text */
+    margin: 0; /* Removes default margin */
+    padding: 10px 0; /* Adds padding above and below the heading */
 }
 
-.selector-button img {
-    display: block;
-    height: 40px;
-    width: 40px;
-}
-.selector-button:active::after {
-    content: '';
-    position: absolute;
-    top: 0; left: 0; right: 0; bottom: 0;
-    background: rgba(0,0,0,0.2); /* 20% black overlay */
-    border-radius: inherit;
-    pointer-events: none;
+a{
+    text-decoration: none;  
+    color: inherit; /* Inherits color from parent */
+    outline: none; /* Removes focus outline */ ;
 }
 
-.selector-button:hover {
-  background-color: #05588f; /* Change to your desired hover color */
-  color: #fff;
-  transition: background 0.2s, color 0.2s;
+a:visited{
+    text-decoration: none;  
+    color: inherit; /* Inherits color from parent */
+    outline: none; /* Removes focus outline */
+}
+
+.chooser-button {
+    display: flex; /* Flexbox for layout */
+    align-items: center; /* Centers items vertically */
+    justify-content: left; /* Centers items horizontally */
+    background-color: rgba(0, 74, 122, 0.8); /* Semi-transparent blue background */
+    color: white; /* Text color */
+    border: none; /* No border */
+    padding: 10px; /* Inner spacing */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s ease; /* Smooth background color transition */
+    font-size: larger;
+    align-content: middle;
+    gap: 10px; /* Space between image and text */
+}
+
+.chooser-button:hover {
+    background-color: rgba(0, 74, 122, 1); /* Darker blue on hover */
 }
