@@ -26,7 +26,7 @@ body{ /* The main page background and base styles */
     background: rgba(36, 36, 36, 0.6); /* Semi-transparent dark background */
     box-shadow: 0 4px 24px rgba(0,0,0,0.15); /* Adds a soft shadow */
     padding: 10px; /* Inner spacing */
-    width: 25vw; /* Stretches to 25% of the viewport width */
+    width: 15vw; /* Stretches to 25% of the viewport width */
     /*max-height: 400px; /* Maximum height before scrolling */
     /*overflow: auto; /* Enables scrollbar if content overflows */
     scrollbar-width: thin; /* Firefox: makes scrollbar thinner */
