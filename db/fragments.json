@@ -1,18 +1,1 @@
-async function loadShaperProfit() {
-  const res = await fetch("../fragments.json");
-  const data = await res.json();
 
-  // Example: let's say Shaper drops 2x "Fragment of Knowledge" on average
-  const fragment = data.lines.find(item => item.currencyTypeName === "Fragment of Knowledge");
-
-  let avgDrops = 2; // your droprate input
-  let chaosValue = fragment.chaosEquivalent;
-  let profit = avgDrops * chaosValue;
-
-  document.getElementById("output").innerHTML = `
-    <p>Fragment of Knowledge value: ${chaosValue} chaos</p>
-    <p>Expected profit per run: ${profit} chaos</p>
-  `;
-}
-
-loadShaperProfit();
