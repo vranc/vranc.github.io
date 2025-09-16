@@ -1,4 +1,4 @@
-name: Update poe.ninja data   # name of the robot task
+name: Update poe.ninja data
 
 on:
   schedule:
@@ -7,15 +7,15 @@ on:
 
 jobs:
   update:
-    runs-on: ubuntu-latest   # the robot will run on a Linux computer
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout repo
-        uses: actions/checkout@v3   # pull your repo files so robot can change them
+        uses: actions/checkout@v3
 
       - name: Fetch Fragments
         run: |
           curl -s "https://poe.ninja/api/data/currencyoverview?league=Mercenaries&type=Fragment" \
-          -o docs/fragments.json   # save file into your repo/docs
+          -o docs/fragments.json
 
       - name: Commit changes
         run: |
