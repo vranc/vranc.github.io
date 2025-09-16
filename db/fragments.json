@@ -1,26 +1,18 @@
-name: Update poe.ninja data
+async function loadShaperProfit() {
+  const res = await fetch("../fragments.json");
+  const data = await res.json();
 
-on:
-  schedule:
-    - cron: "0 * * * *"   # every hour
-  workflow_dispatch:      # manual run button in GitHub Actions
+  // Example: let's say Shaper drops 2x "Fragment of Knowledge" on average
+  const fragment = data.lines.find(item => item.currencyTypeName === "Fragment of Knowledge");
 
-jobs:
-  update:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout repo
-        uses: actions/checkout@v3
+  let avgDrops = 2; // your droprate input
+  let chaosValue = fragment.chaosEquivalent;
+  let profit = avgDrops * chaosValue;
 
-      - name: Fetch Fragments
-        run: |
-          curl -s "https://poe.ninja/api/data/currencyoverview?league=Mercenaries&type=Fragment" \
-          -o docs/fragments.json
+  document.getElementById("output").innerHTML = `
+    <p>Fragment of Knowledge value: ${chaosValue} chaos</p>
+    <p>Expected profit per run: ${profit} chaos</p>
+  `;
+}
 
-      - name: Commit changes
-        run: |
-          git config --global user.name "github-actions"
-          git config --global user.email "actions@github.com"
-          git add docs/fragments.json
-          git commit -m "Update fragments cache" || echo "No changes"
-          git push
+loadShaperProfit();
