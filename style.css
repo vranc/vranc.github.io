@@ -15,8 +15,9 @@ body{ /* The main page background and base styles */
     /*position: absolute; /* Positions it absolutely within its parent */
     /*top: 0; /* Aligns to the top */
     /*left: 0; /* Aligns to the left */
-    /*width: 100%; /* Full width of the parent */
-    /*height: 100%; /* Full height of the parent */
+    width: 100%; /* Full width of the parent */
+    min-height: 100vh; /* Minimum height of the viewport */
+    height: 100%; /* Full height of the parent */
     /*background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
 }
 
@@ -27,6 +28,7 @@ body{ /* The main page background and base styles */
     box-shadow: 0 4px 24px rgba(0,0,0,0.15); /* Adds a soft shadow */
     padding: 10px; /* Inner spacing */
     width: 15vw; /* Stretches to 25% of the viewport width */
+    min-height: auto; /* Minimum height */
     /*max-height: 400px; /* Maximum height before scrolling */
     /*overflow: auto; /* Enables scrollbar if content overflows */
     scrollbar-width: thin; /* Firefox: makes scrollbar thinner */
