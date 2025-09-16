@@ -1,0 +1,26 @@
+name: Update poe.ninja data
+
+on:
+  schedule:
+    - cron: "0 * * * *"   # every hour
+  workflow_dispatch:      # manual run button in GitHub Actions
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      - name: Fetch Fragments
+        run: |
+          curl -s "https://poe.ninja/api/data/currencyoverview?league=Mercenaries&type=Fragment" \
+          -o docs/fragments.json
+
+      - name: Commit changes
+        run: |
+          git config --global user.name "github-actions"
+          git config --global user.email "actions@github.com"
+          git add docs/fragments.json
+          git commit -m "Update fragments cache" || echo "No changes"
+          git push
