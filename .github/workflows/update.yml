@@ -2,8 +2,8 @@ name: Update poe.ninja data
 
 on:
   schedule:
-    - cron: "0 * * * *"   # run once every hour
-  workflow_dispatch:      # also let me press "Run" button manually
+    - cron: "0 */3 * * *"
+  workflow_dispatch:
 
 permissions:
   contents: write
